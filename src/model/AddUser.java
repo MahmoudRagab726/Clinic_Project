@@ -1,7 +1,9 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+
+import java.util.Date;
+import javax.persistence.*;
+
 
 /**
  * Created by Mahmoud Ragab on 10/10/2016.
@@ -9,15 +11,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "patient")
 public class AddUser {
+    @Id
+    @Column(name = "patientid")
     private int filenumber;
+    @Column(name = "patientname")
     private String patientName;
+    @Column(name = "age")
     private int age;
+    @Column(name = "husbandname")
     private String husbandName;
+    @Column(name = "phone")
     private String phone;
+    @Column(name = "notes")
     private String notes;
-    private String LMP;
+    @Column(name = "LMP")
+    private Date LMP;
+    @Column(name = "RH")
     private String RH;
-    private String EDD;
+    @Column(name = "EDD")
+    private Date EDD;
 
     public int getFilenumber() {
         return filenumber;
@@ -67,11 +79,12 @@ public class AddUser {
         this.notes = notes;
     }
 
-    public String getLMP() {
+    public Date getLMP() {
+        
         return LMP;
     }
 
-    public void setLMP(String LMP) {
+    public void setLMP(Date LMP) {
         this.LMP = LMP;
     }
 
@@ -83,11 +96,13 @@ public class AddUser {
         this.RH = RH;
     }
 
-    public String getEDD() {
+    public Date getEDD() {
         return EDD;
     }
 
-    public void setEDD(String EDD) {
+    public void setEDD(Date EDD) {
         this.EDD = EDD;
     }
+
+   
 }
